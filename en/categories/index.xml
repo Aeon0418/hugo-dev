@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
-        <title>Categories on AO&#39;s Blog</title>
+        <title>Categories on Aeon&#39;s Blog</title>
         <link>https://aeon0418.github.io/hugo-dev/en/categories/</link>
-        <description>Recent content in Categories on AO&#39;s Blog</description>
+        <description>Recent content in Categories on Aeon&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <copyright>_Chen_Aeon-陈阳</copyright>
+        <copyright>© AeonChen- 阳 陈</copyright>
         <lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://aeon0418.github.io/hugo-dev/en/categories/index.xml" rel="self" type="application/rss+xml" /><item>
         <title>Test</title>
         <link>https://aeon0418.github.io/hugo-dev/en/categories/test/</link>
