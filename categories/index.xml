@@ -47,6 +47,22 @@
         <guid>https://aeon0418.github.io/hugo-dev/categories/test-with-whitespaces/</guid>
         <description></description>
         </item>
+        <item>
+        <title>Academic</title>
+        <link>https://aeon0418.github.io/hugo-dev/categories/academic/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/categories/academic/</guid>
+        <description>&lt;img src="https://aeon0418.github.io/hugo-dev/categories/academic/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Academic" /&gt;</description>
+        </item>
+        <item>
+        <title>Note</title>
+        <link>https://aeon0418.github.io/hugo-dev/categories/note/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/categories/note/</guid>
+        <description>&lt;img src="https://aeon0418.github.io/hugo-dev/categories/note/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Note" /&gt;</description>
+        </item>
         
     </channel>
 </rss>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Academic on 阳的博客</title>
+        <link>https://aeon0418.github.io/hugo-dev/categories/academic/</link>
+        <description>Recent content in Academic on 阳的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>_Chen_Aeon-陈阳</copyright><atom:link href="https://aeon0418.github.io/hugo-dev/categories/academic/index.xml" rel="self" type="application/rss+xml" />
+    </channel>
+</rss>
