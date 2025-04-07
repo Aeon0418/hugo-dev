@@ -7,21 +7,37 @@
         <generator>Hugo -- gohugo.io</generator>
         <language>zh-cn</language>
         <copyright>© AeonChen- 阳 陈</copyright>
-        <lastBuildDate>Sun, 07 Apr 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://aeon0418.github.io/hugo-dev/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <lastBuildDate>Mon, 07 Apr 2025 18:57:49 +0800</lastBuildDate><atom:link href="https://aeon0418.github.io/hugo-dev/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Academic</title>
+        <link>https://aeon0418.github.io/hugo-dev/categories/academic/</link>
+        <pubDate>Mon, 07 Apr 2025 18:57:49 +0800</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/categories/academic/</guid>
+        <description>&lt;img src="https://aeon0418.github.io/hugo-dev/categories/academic/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Academic" /&gt;</description>
+        </item>
+        <item>
+        <title>Test</title>
+        <link>https://aeon0418.github.io/hugo-dev/categories/test/</link>
+        <pubDate>Mon, 07 Apr 2025 18:57:49 +0800</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/categories/test/</guid>
+        <description>&lt;img src="https://aeon0418.github.io/hugo-dev/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
+        </item>
+        <item>
+        <title>测试</title>
+        <link>https://aeon0418.github.io/hugo-dev/categories/%E6%B5%8B%E8%AF%95/</link>
+        <pubDate>Mon, 07 Apr 2025 18:57:49 +0800</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/categories/%E6%B5%8B%E8%AF%95/</guid>
+        <description></description>
+        </item>
+        <item>
         <title>Note</title>
         <link>https://aeon0418.github.io/hugo-dev/categories/note/</link>
         <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
         
         <guid>https://aeon0418.github.io/hugo-dev/categories/note/</guid>
         <description>&lt;img src="https://aeon0418.github.io/hugo-dev/categories/note/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Note" /&gt;</description>
-        </item>
-        <item>
-        <title>测试</title>
-        <link>https://aeon0418.github.io/hugo-dev/categories/%E6%B5%8B%E8%AF%95/</link>
-        <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
-        
-        <guid>https://aeon0418.github.io/hugo-dev/categories/%E6%B5%8B%E8%AF%95/</guid>
-        <description></description>
         </item>
         <item>
         <title>Syntax</title>
@@ -40,28 +56,12 @@
         <description></description>
         </item>
         <item>
-        <title>Test</title>
-        <link>https://aeon0418.github.io/hugo-dev/categories/test/</link>
-        <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-        
-        <guid>https://aeon0418.github.io/hugo-dev/categories/test/</guid>
-        <description>&lt;img src="https://aeon0418.github.io/hugo-dev/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
-        </item>
-        <item>
         <title>Test With Whitespaces</title>
         <link>https://aeon0418.github.io/hugo-dev/categories/test-with-whitespaces/</link>
         <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
         
         <guid>https://aeon0418.github.io/hugo-dev/categories/test-with-whitespaces/</guid>
         <description></description>
-        </item>
-        <item>
-        <title>Academic</title>
-        <link>https://aeon0418.github.io/hugo-dev/categories/academic/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://aeon0418.github.io/hugo-dev/categories/academic/</guid>
-        <description>&lt;img src="https://aeon0418.github.io/hugo-dev/categories/academic/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Academic" /&gt;</description>
         </item>
         
     </channel>
