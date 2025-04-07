@@ -2,84 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://settia173.github.io/hugo-dev/en/</loc>
+    <loc>https://aeon0418.github.io/hugo-dev/en/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://settia173.github.io/hugo-dev/"
+                href="https://aeon0418.github.io/hugo-dev/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://settia173.github.io/hugo-dev/en/"
+                href="https://aeon0418.github.io/hugo-dev/en/"
                 />
   </url><url>
-    <loc>https://settia173.github.io/hugo-dev/en/categories/</loc>
+    <loc>https://aeon0418.github.io/hugo-dev/en/categories/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://settia173.github.io/hugo-dev/categories/"
+                href="https://aeon0418.github.io/hugo-dev/categories/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://settia173.github.io/hugo-dev/en/categories/"
+                href="https://aeon0418.github.io/hugo-dev/en/categories/"
                 />
   </url><url>
-    <loc>https://settia173.github.io/hugo-dev/en/p/test-chinese/</loc>
+    <loc>https://aeon0418.github.io/hugo-dev/en/p/test-chinese/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://settia173.github.io/hugo-dev/en/post/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://settia173.github.io/hugo-dev/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://settia173.github.io/hugo-dev/en/post/"
-                />
-  </url><url>
-    <loc>https://settia173.github.io/hugo-dev/en/categories/test/</loc>
+    <loc>https://aeon0418.github.io/hugo-dev/en/post/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://settia173.github.io/hugo-dev/categories/test/"
+                href="https://aeon0418.github.io/hugo-dev/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://settia173.github.io/hugo-dev/en/categories/test/"
+                href="https://aeon0418.github.io/hugo-dev/en/post/"
                 />
   </url><url>
-    <loc>https://settia173.github.io/hugo-dev/en/categories/%E6%B5%8B%E8%AF%95/</loc>
+    <loc>https://aeon0418.github.io/hugo-dev/en/categories/test/</loc>
     <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://settia173.github.io/hugo-dev/categories/%E6%B5%8B%E8%AF%95/"
+                href="https://aeon0418.github.io/hugo-dev/categories/test/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://settia173.github.io/hugo-dev/en/categories/%E6%B5%8B%E8%AF%95/"
+                href="https://aeon0418.github.io/hugo-dev/en/categories/test/"
                 />
   </url><url>
-    <loc>https://settia173.github.io/hugo-dev/en/tags/</loc>
+    <loc>https://aeon0418.github.io/hugo-dev/en/categories/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://settia173.github.io/hugo-dev/tags/"
+                href="https://aeon0418.github.io/hugo-dev/categories/%E6%B5%8B%E8%AF%95/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://settia173.github.io/hugo-dev/en/tags/"
+                href="https://aeon0418.github.io/hugo-dev/en/categories/%E6%B5%8B%E8%AF%95/"
+                />
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/en/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://aeon0418.github.io/hugo-dev/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aeon0418.github.io/hugo-dev/en/tags/"
                 />
   </url>
 </urlset>

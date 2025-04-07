@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
     <channel>
         <title>Tags on AO&#39;s Blog</title>
-        <link>https://settia173.github.io/hugo-dev/en/tags/</link>
+        <link>https://aeon0418.github.io/hugo-dev/en/tags/</link>
         <description>Recent content in Tags on AO&#39;s Blog</description>
         <generator>Hugo -- gohugo.io</generator>
         <language>en</language>
-        <copyright>_Chen_Aeon-陈阳</copyright><atom:link href="https://settia173.github.io/hugo-dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
+        <copyright>_Chen_Aeon-陈阳</copyright><atom:link href="https://aeon0418.github.io/hugo-dev/en/tags/index.xml" rel="self" type="application/rss+xml" />
     </channel>
 </rss>
