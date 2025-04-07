@@ -32,7 +32,7 @@
                 />
   </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/categories/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -45,23 +45,13 @@
                 />
   </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/p/test-chinese/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/categories/test/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aeon0418.github.io/hugo-dev/en/categories/test/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://aeon0418.github.io/hugo-dev/categories/test/"
-                />
+    <loc>https://aeon0418.github.io/hugo-dev/categories/note/</loc>
+    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/categories/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+    <lastmod>2024-04-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -119,6 +109,19 @@
     <loc>https://aeon0418.github.io/hugo-dev/tags/tag-with-whitespaces/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/categories/test/</loc>
+    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aeon0418.github.io/hugo-dev/en/categories/test/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://aeon0418.github.io/hugo-dev/categories/test/"
+                />
+  </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/categories/test-with-whitespaces/</loc>
     <lastmod>2019-03-09T00:00:00+00:00</lastmod>
   </url><url>
@@ -135,8 +138,16 @@
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/categories/academic/</loc>
-  </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/categories/note/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aeon0418.github.io/hugo-dev/en/categories/academic/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://aeon0418.github.io/hugo-dev/categories/academic/"
+                />
   </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/note/</loc>
   </url><url>
