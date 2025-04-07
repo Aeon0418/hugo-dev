@@ -105,31 +105,5 @@
                 hreflang="en"
                 href="https://aeon0418.github.io/hugo-dev/en/tags/ubuntu/"
                 />
-  </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/en/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2025-04-07T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://aeon0418.github.io/hugo-dev/tags/%E6%95%99%E7%A8%8B/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aeon0418.github.io/hugo-dev/en/tags/%E6%95%99%E7%A8%8B/"
-                />
-  </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/en/categories/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2025-04-07T00:00:00+00:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://aeon0418.github.io/hugo-dev/categories/%E6%B5%8B%E8%AF%95/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aeon0418.github.io/hugo-dev/en/categories/%E6%B5%8B%E8%AF%95/"
-                />
   </url>
 </urlset>
