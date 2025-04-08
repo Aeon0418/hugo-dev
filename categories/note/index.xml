@@ -54,8 +54,8 @@
         <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
         
         <guid>https://aeon0418.github.io/hugo-dev/notes/note/ubuntu_commend/ubuntu_note/</guid>
-        <description>&lt;p&gt;ubuntu命令&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+        <description>&lt;h3 id=&#34;ubuntu命令&#34;&gt;ubuntu命令
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
@@ -77,7 +77,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo chmod -R 777 cacc（cacc为文件名称），解决文件夹带锁问
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;code&gt;ps aux | grep optuna_tuning0402.py&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;h4 id=&#34;查看进程-nohup运行&#34;&gt;查看进程 nohup运行
+&lt;/h4&gt;&lt;p&gt;&lt;code&gt;ps aux | grep optuna_tuning0402.py&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;nohup python optuna_tuning0402.py &amp;gt; output.log 2&amp;gt;&amp;amp;1 &amp;amp;&lt;/code&gt;后台运行&lt;/p&gt;
 </description>
         </item>
@@ -212,8 +213,8 @@
         <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
         
         <guid>https://aeon0418.github.io/hugo-dev/notes/note/pythonc/</guid>
-        <description>&lt;p&gt;快捷键&lt;/p&gt;
-&lt;p&gt;ctrl+k+c打注释&lt;/p&gt;
+        <description>&lt;h4 id=&#34;快捷键&#34;&gt;快捷键
+&lt;/h4&gt;&lt;p&gt;ctrl+k+c打注释&lt;/p&gt;
 &lt;p&gt;f-string在形式上是以 &lt;code&gt;f&lt;/code&gt; 或 &lt;code&gt;F&lt;/code&gt; 修饰符引领的字符串（&lt;code&gt;f&#39;xxx&#39;&lt;/code&gt; 或 &lt;code&gt;F&#39;xxx&#39;&lt;/code&gt;），以大括号 &lt;code&gt;{}&lt;/code&gt; 标明被替换的字段；f-string在本质上并不是字符串常量，而是一个在运行时运算求值的表达式&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
@@ -227,7 +228,8 @@
 &lt;/div&gt;
 &lt;/div&gt;&lt;hr&gt;
 &lt;hr&gt;
-&lt;p&gt;os.walk() 方法用于通过在目录树中游走输出在目录中的文件名，向上或者向下。&lt;/p&gt;
+&lt;h3 id=&#34;取文件&#34;&gt;取文件
+&lt;/h3&gt;&lt;p&gt;os.walk() 方法用于通过在目录树中游走输出在目录中的文件名，向上或者向下。&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;    for root, dirs, files in os.walk(file):
     # root 表示当前正在访问的文件夹路径
     # dirs 表示该文件夹下的子目录名list
@@ -350,11 +352,12 @@ $$&lt;ul&gt;
         <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
         
         <guid>https://aeon0418.github.io/hugo-dev/notes/note/git_commend/git_note/</guid>
-        <description>&lt;p&gt;git init
+        <description>&lt;h3 id=&#34;git命令&#34;&gt;git命令
+&lt;/h3&gt;&lt;p&gt;git init
 git add README.md
 git commit -m &amp;ldquo;首次提交&amp;rdquo;
 git branch -M AO
-git remote add origin &lt;a class=&#34;link&#34; href=&#34;mailto:git@github.com&#34; &gt;git@github.com&lt;/a&gt;:settia173/runxz_v4.git
+git remote add origin &lt;a class=&#34;link&#34; href=&#34;mailto:git@github.com&#34; &gt;git@github.com&lt;/a&gt;:aeon0418/xxx.git
 git push -u origin A&lt;/p&gt;
 </description>
         </item>
@@ -1145,7 +1148,7 @@ A trial ID是自动生成的试用ID。&lt;/p&gt;
         <item>
         <title>Chinese Test</title>
         <link>https://aeon0418.github.io/hugo-dev/p/h2test111/</link>
-        <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
+        <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
         
         <guid>https://aeon0418.github.io/hugo-dev/p/h2test111/</guid>
         <description>&lt;img src="https://aeon0418.github.io/hugo-dev/p/h2test111/helena-hertz-wWZzXlDpMog-unsplash.jpg" alt="Featured image of post Chinese Test" /&gt;&lt;h2 id=&#34;正文测试&#34;&gt;正文测试

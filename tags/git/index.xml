@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Git on 阳的博客</title>
+        <link>https://aeon0418.github.io/hugo-dev/tags/git/</link>
+        <description>Recent content in Git on 阳的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>© AeonChen- 阳 陈</copyright>
+        <lastBuildDate>Sat, 08 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://aeon0418.github.io/hugo-dev/tags/git/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>git命令</title>
+        <link>https://aeon0418.github.io/hugo-dev/notes/note/git_commend/git_note/</link>
+        <pubDate>Sat, 08 Mar 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/notes/note/git_commend/git_note/</guid>
+        <description>&lt;h3 id=&#34;git命令&#34;&gt;git命令
+&lt;/h3&gt;&lt;p&gt;git init
+git add README.md
+git commit -m &amp;ldquo;首次提交&amp;rdquo;
+git branch -M AO
+git remote add origin &lt;a class=&#34;link&#34; href=&#34;mailto:git@github.com&#34; &gt;git@github.com&lt;/a&gt;:aeon0418/xxx.git
+git push -u origin A&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

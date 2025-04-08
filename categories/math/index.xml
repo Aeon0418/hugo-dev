@@ -48,43 +48,6 @@
 &lt;/h3&gt;</description>
         </item>
         <item>
-        <title>python的命令</title>
-        <link>https://aeon0418.github.io/hugo-dev/notes/note/pythonc/</link>
-        <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://aeon0418.github.io/hugo-dev/notes/note/pythonc/</guid>
-        <description>&lt;p&gt;快捷键&lt;/p&gt;
-&lt;p&gt;ctrl+k+c打注释&lt;/p&gt;
-&lt;p&gt;f-string在形式上是以 &lt;code&gt;f&lt;/code&gt; 或 &lt;code&gt;F&lt;/code&gt; 修饰符引领的字符串（&lt;code&gt;f&#39;xxx&#39;&lt;/code&gt; 或 &lt;code&gt;F&#39;xxx&#39;&lt;/code&gt;），以大括号 &lt;code&gt;{}&lt;/code&gt; 标明被替换的字段；f-string在本质上并不是字符串常量，而是一个在运行时运算求值的表达式&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
-&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
-&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
-&lt;td class=&#34;lntd&#34;&gt;
-&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;name = &amp;#39;Eric&amp;#39; 
-&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; f&amp;#39;Hello, my name is {name}&amp;#39;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;&lt;hr&gt;
-&lt;hr&gt;
-&lt;p&gt;os.walk() 方法用于通过在目录树中游走输出在目录中的文件名，向上或者向下。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;    for root, dirs, files in os.walk(file):
-    # root 表示当前正在访问的文件夹路径
-    # dirs 表示该文件夹下的子目录名list
-    # files 表示该文件夹下的文件list
-
-    # 遍历文件
-    for f in files:
-        print(os.path.join(root, f))
-
-    # 遍历所有的文件夹
-    for d in dirs:
-        print(os.path.join(root, d))
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-        </item>
-        <item>
         <title>unslothtu</title>
         <link>https://aeon0418.github.io/hugo-dev/articles/2025/unsloth_tutorial/unslothtu/</link>
         <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>

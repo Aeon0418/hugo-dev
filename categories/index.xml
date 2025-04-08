@@ -48,20 +48,20 @@
         <description></description>
         </item>
         <item>
-        <title>Test</title>
-        <link>https://aeon0418.github.io/hugo-dev/categories/test/</link>
-        <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
-        
-        <guid>https://aeon0418.github.io/hugo-dev/categories/test/</guid>
-        <description>&lt;img src="https://aeon0418.github.io/hugo-dev/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
-        </item>
-        <item>
         <title>测试</title>
         <link>https://aeon0418.github.io/hugo-dev/categories/%E6%B5%8B%E8%AF%95/</link>
         <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
         
         <guid>https://aeon0418.github.io/hugo-dev/categories/%E6%B5%8B%E8%AF%95/</guid>
         <description></description>
+        </item>
+        <item>
+        <title>Test</title>
+        <link>https://aeon0418.github.io/hugo-dev/categories/test/</link>
+        <pubDate>Sun, 07 Apr 2019 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/categories/test/</guid>
+        <description>&lt;img src="https://aeon0418.github.io/hugo-dev/categories/test/hutomo-abrianto-l2jk-uxb1BY-unsplash.jpg" alt="Featured image of post Test" /&gt;</description>
         </item>
         <item>
         <title>Syntax</title>
@@ -78,6 +78,22 @@
         
         <guid>https://aeon0418.github.io/hugo-dev/categories/themes/</guid>
         <description></description>
+        </item>
+        <item>
+        <title>LLM</title>
+        <link>https://aeon0418.github.io/hugo-dev/categories/llm/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/categories/llm/</guid>
+        <description>&lt;img src="https://aeon0418.github.io/hugo-dev/img/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post LLM" /&gt;</description>
+        </item>
+        <item>
+        <title>unfinished</title>
+        <link>https://aeon0418.github.io/hugo-dev/categories/unfinished/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/categories/unfinished/</guid>
+        <description>&lt;img src="https://aeon0418.github.io/hugo-dev/img/pawel-czerwinski-8uZPynIu-rQ-unsplash.jpg" alt="Featured image of post unfinished" /&gt;</description>
         </item>
         
     </channel>

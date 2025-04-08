@@ -13,8 +13,8 @@
         <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
         
         <guid>https://aeon0418.github.io/hugo-dev/notes/note/ubuntu_commend/ubuntu_note/</guid>
-        <description>&lt;p&gt;ubuntu命令&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+        <description>&lt;h3 id=&#34;ubuntu命令&#34;&gt;ubuntu命令
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
 &lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
 &lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
 &lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
@@ -36,7 +36,8 @@
 &lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;sudo chmod -R 777 cacc（cacc为文件名称），解决文件夹带锁问
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
 &lt;/div&gt;
-&lt;/div&gt;&lt;p&gt;&lt;code&gt;ps aux | grep optuna_tuning0402.py&lt;/code&gt;&lt;/p&gt;
+&lt;/div&gt;&lt;h4 id=&#34;查看进程-nohup运行&#34;&gt;查看进程 nohup运行
+&lt;/h4&gt;&lt;p&gt;&lt;code&gt;ps aux | grep optuna_tuning0402.py&lt;/code&gt;&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;nohup python optuna_tuning0402.py &amp;gt; output.log 2&amp;gt;&amp;amp;1 &amp;amp;&lt;/code&gt;后台运行&lt;/p&gt;
 </description>
         </item>
