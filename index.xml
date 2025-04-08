@@ -168,6 +168,27 @@
     &gt;Typlog&lt;/a&gt;&lt;/p&gt;</description>
         </item>
         <item>
+        <title>关于</title>
+        <link>https://aeon0418.github.io/hugo-dev/about/</link>
+        <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/about/</guid>
+        <description>&lt;h2 id=&#34;个人简介&#34;&gt;个人简介
+&lt;/h2&gt;&lt;p&gt;我目前在深圳技术大学学习&lt;/p&gt;
+&lt;h2 id=&#34;联系方式&#34;&gt;联系方式
+&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://github.com/Aeon0418&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Aeon0418&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Discord&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://discord.com/channels/@me&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;个人频道&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;B站&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;https://space.bilibili.com/1591815501/dynamic&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;个人空间&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Email&lt;/strong&gt;: &lt;a class=&#34;link&#34; href=&#34;mailto:1731140515@qq.com&#34; &gt;1731140515@qq.com&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;「青山落日，秋月春风」&lt;/em&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
         <title>Chinese Test</title>
         <link>https://aeon0418.github.io/hugo-dev/p/h2test111/</link>
         <pubDate>Sun, 07 Apr 2024 00:00:00 +0000</pubDate>
@@ -600,15 +621,6 @@ $$</description>
         
         <guid>https://aeon0418.github.io/hugo-dev/note/</guid>
         <description></description>
-        </item>
-        <item>
-        <title>关于</title>
-        <link>https://aeon0418.github.io/hugo-dev/%E5%85%B3%E4%BA%8E/</link>
-        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-        
-        <guid>https://aeon0418.github.io/hugo-dev/%E5%85%B3%E4%BA%8E/</guid>
-        <description>&lt;p&gt;在shenzhenTech学习&lt;/p&gt;
-</description>
         </item>
         <item>
         <title>搜索</title>
