@@ -132,6 +132,16 @@
   </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/page/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aeon0418.github.io/hugo-dev/en/page/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://aeon0418.github.io/hugo-dev/page/"
+                />
   </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/archives/</loc>
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
@@ -181,6 +191,16 @@
     <loc>https://aeon0418.github.io/hugo-dev/note/</loc>
   </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/%E5%85%B3%E4%BA%8E/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aeon0418.github.io/hugo-dev/en/%E5%85%B3%E4%BA%8E/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://aeon0418.github.io/hugo-dev/%E5%85%B3%E4%BA%8E/"
+                />
   </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/search/</loc>
   </url><url>
