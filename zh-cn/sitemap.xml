@@ -44,19 +44,6 @@
     <loc>https://aeon0418.github.io/hugo-dev/p/index47/</loc>
     <lastmod>2025-04-07T18:57:49+08:00</lastmod>
   </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/post/</loc>
-    <lastmod>2025-04-07T18:57:49+08:00</lastmod>
-    <xhtml:link
-                rel="alternate"
-                hreflang="en"
-                href="https://aeon0418.github.io/hugo-dev/en/post/"
-                />
-    <xhtml:link
-                rel="alternate"
-                hreflang="zh-cn"
-                href="https://aeon0418.github.io/hugo-dev/post/"
-                />
-  </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/categories/test/</loc>
     <lastmod>2025-04-07T18:57:49+08:00</lastmod>
     <xhtml:link
@@ -72,6 +59,19 @@
   </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/categories/%E6%B5%8B%E8%AF%95/</loc>
     <lastmod>2025-04-07T18:57:49+08:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/post/</loc>
+    <lastmod>2025-04-07T18:57:49+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aeon0418.github.io/hugo-dev/en/post/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://aeon0418.github.io/hugo-dev/post/"
+                />
   </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/p/how2test/</loc>
     <lastmod>2025-04-07T00:00:00+00:00</lastmod>
