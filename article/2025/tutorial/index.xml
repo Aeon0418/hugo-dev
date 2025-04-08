@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>2024年文章 on 阳的博客</title>
+        <link>https://aeon0418.github.io/hugo-dev/article/2025/tutorial/</link>
+        <description>Recent content in 2024年文章 on 阳的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>© AeonChen- 阳 陈</copyright>
+        <lastBuildDate>Mon, 07 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://aeon0418.github.io/hugo-dev/article/2025/tutorial/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>unslothtu</title>
+        <link>https://aeon0418.github.io/hugo-dev/articles/2025/unsloth_tutorial/unslothtu/</link>
+        <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/articles/2025/unsloth_tutorial/unslothtu/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

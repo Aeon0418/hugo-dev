@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://aeon0418.github.io/hugo-dev/</loc>
-    <lastmod>2025-04-07T18:57:49+08:00</lastmod>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,8 +15,14 @@
                 href="https://aeon0418.github.io/hugo-dev/"
                 />
   </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/article/2025/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/note/ubuntu_commend/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/categories/academic/</loc>
-    <lastmod>2025-04-07T18:57:49+08:00</lastmod>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -29,7 +35,7 @@
                 />
   </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/categories/</loc>
-    <lastmod>2025-04-07T18:57:49+08:00</lastmod>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -41,40 +47,87 @@
                 href="https://aeon0418.github.io/hugo-dev/categories/"
                 />
   </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/p/index47/</loc>
-    <lastmod>2025-04-07T18:57:49+08:00</lastmod>
+    <loc>https://aeon0418.github.io/hugo-dev/categories/commend/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/categories/test/</loc>
-    <lastmod>2025-04-07T18:57:49+08:00</lastmod>
+    <loc>https://aeon0418.github.io/hugo-dev/articles/2025/wss/rlwss/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/tags/math/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/categories/note/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/tags/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://aeon0418.github.io/hugo-dev/en/categories/test/"
+                href="https://aeon0418.github.io/hugo-dev/en/tags/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://aeon0418.github.io/hugo-dev/categories/test/"
+                href="https://aeon0418.github.io/hugo-dev/tags/"
                 />
   </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/categories/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2025-04-07T18:57:49+08:00</lastmod>
-  </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/post/</loc>
-    <lastmod>2025-04-07T18:57:49+08:00</lastmod>
+    <loc>https://aeon0418.github.io/hugo-dev/tags/ubuntu/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://aeon0418.github.io/hugo-dev/en/post/"
+                href="https://aeon0418.github.io/hugo-dev/en/tags/ubuntu/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://aeon0418.github.io/hugo-dev/post/"
+                href="https://aeon0418.github.io/hugo-dev/tags/ubuntu/"
                 />
   </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/p/how2test/</loc>
+    <loc>https://aeon0418.github.io/hugo-dev/notes/note/ubuntu_commend/ubuntu_note/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/categories/%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/note/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/tags/%E6%95%99%E7%A8%8B/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/article/</loc>
+    <lastmod>2025-04-08T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aeon0418.github.io/hugo-dev/en/article/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://aeon0418.github.io/hugo-dev/article/"
+                />
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/article/2025/tutorial/</loc>
     <lastmod>2025-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/article/2025/math/</loc>
+    <lastmod>2025-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/articles/2025/articletemplate/article-template/</loc>
+    <lastmod>2025-04-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aeon0418.github.io/hugo-dev/en/articles/2025/articletemplate/test-chinese/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://aeon0418.github.io/hugo-dev/articles/2025/articletemplate/article-template/"
+                />
   </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/p/test-chinese/</loc>
     <lastmod>2025-04-07T00:00:00+00:00</lastmod>
@@ -89,43 +142,67 @@
                 href="https://aeon0418.github.io/hugo-dev/p/test-chinese/"
                 />
   </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/tags/life/</loc>
+    <loc>https://aeon0418.github.io/hugo-dev/articles/2025/ics/ics/</loc>
     <lastmod>2025-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/categories/note/</loc>
+    <loc>https://aeon0418.github.io/hugo-dev/categories/math/</loc>
     <lastmod>2025-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/tags/</loc>
+    <loc>https://aeon0418.github.io/hugo-dev/tags/ml/</loc>
+    <lastmod>2025-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/notes/note/pythonc/</loc>
+    <lastmod>2025-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/categories/test/</loc>
     <lastmod>2025-04-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://aeon0418.github.io/hugo-dev/en/tags/"
+                href="https://aeon0418.github.io/hugo-dev/en/categories/test/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://aeon0418.github.io/hugo-dev/tags/"
+                href="https://aeon0418.github.io/hugo-dev/categories/test/"
                 />
   </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/tags/tech/</loc>
+    <loc>https://aeon0418.github.io/hugo-dev/articles/2025/unsloth_tutorial/unslothtu/</loc>
     <lastmod>2025-04-07T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/tags/ubuntu/</loc>
+    <loc>https://aeon0418.github.io/hugo-dev/categories/%E6%B5%8B%E8%AF%95/</loc>
+    <lastmod>2025-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/articles/2025/mathforml/math4ml/</loc>
+    <lastmod>2025-04-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/post/</loc>
     <lastmod>2025-04-07T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
-                href="https://aeon0418.github.io/hugo-dev/en/tags/ubuntu/"
+                href="https://aeon0418.github.io/hugo-dev/en/post/"
                 />
     <xhtml:link
                 rel="alternate"
                 hreflang="zh-cn"
-                href="https://aeon0418.github.io/hugo-dev/tags/ubuntu/"
+                href="https://aeon0418.github.io/hugo-dev/post/"
                 />
   </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/tags/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2025-04-07T00:00:00+00:00</lastmod>
+    <loc>https://aeon0418.github.io/hugo-dev/note/git_commend/</loc>
+    <lastmod>2025-03-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/notes/note/git_commend/git_note/</loc>
+    <lastmod>2025-03-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/tags/personal/</loc>
+    <lastmod>2025-03-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/articles/2025/optuan/optuna_learn1/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/articles/2025/optuna2/optuna_learn2/</loc>
+    <lastmod>2025-02-08T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/page/</loc>
     <lastmod>2024-04-08T00:00:00+00:00</lastmod>
@@ -180,18 +257,6 @@
     <loc>https://aeon0418.github.io/hugo-dev/tags/themes/</loc>
     <lastmod>2019-03-11T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/p/placeholder-text/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/tags/tag-with-whitespaces/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/categories/test-with-whitespaces/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/tags/text/</loc>
-    <lastmod>2019-03-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/p/math-typesetting/</loc>
     <lastmod>2019-03-08T00:00:00+00:00</lastmod>
   </url><url>
@@ -201,9 +266,17 @@
     <loc>https://aeon0418.github.io/hugo-dev/p/emoji-support/</loc>
     <lastmod>2019-03-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/categories/%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://aeon0418.github.io/hugo-dev/articles/1/tranformer/</loc>
   </url><url>
-    <loc>https://aeon0418.github.io/hugo-dev/note_warehouse/</loc>
+    <loc>https://aeon0418.github.io/hugo-dev/articles/1/%E6%AF%9B%E7%8E%89%E4%BB%81/</loc>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/articles/1/%E8%B0%A2%E6%B5%B7%E5%8D%8E/</loc>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/articles/1/%E9%99%88%E4%BA%91%E9%9C%81aics%E7%A0%94%E8%AE%A8%E8%AF%BE/</loc>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/article/2024/</loc>
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/article/2025/class/</loc>
   </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/search/</loc>
   </url>

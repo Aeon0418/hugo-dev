@@ -1,0 +1,1994 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>2025年文章 on 阳的博客</title>
+        <link>https://aeon0418.github.io/hugo-dev/article/2025/</link>
+        <description>Recent content in 2025年文章 on 阳的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>© AeonChen- 阳 陈</copyright>
+        <lastBuildDate>Tue, 08 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://aeon0418.github.io/hugo-dev/article/2025/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>m32</title>
+        <link>https://aeon0418.github.io/hugo-dev/articles/2025/wss/rlwss/</link>
+        <pubDate>Tue, 08 Apr 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/articles/2025/wss/rlwss/</guid>
+        <description>&lt;p&gt;深度强化学习&lt;/p&gt;
+&lt;p&gt;1&lt;/p&gt;
+&lt;p&gt;Agent 智能体&lt;/p&gt;
+&lt;p&gt;policy Π&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-17-15-59-46-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;pai 是一个概率密度函数，给定状态S，做出action a的概率&lt;/p&gt;
+&lt;p&gt;奖励reward R&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-17-16-06-09-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;状态转移i随机性&lt;/p&gt;
+&lt;p&gt;回报，未来的累计回报 return&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-17-16-11-16-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;折扣回报，折gamma，未来的return要打个折&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>ICS内部协变量偏移</title>
+        <link>https://aeon0418.github.io/hugo-dev/articles/2025/ics/ics/</link>
+        <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/articles/2025/ics/ics/</guid>
+        <description>&lt;p&gt;:[Batch Normalization]: Accelerating Deep Network Training by Reducing Internal Covariate Shift&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;内部协变量偏移（Internal Covariate Shift）&lt;/strong&gt;  ICS&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/math_img/2025-02-15-12-01-19-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/math_img/2025-02-15-12-30-24-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;协变量covariate&#34;&gt;协变量（Covariate）
+&lt;/h3&gt;&lt;p&gt;在机器学习中，协变量是指用于预测或解释目标变量（y yy）的一组输入变量或特征（x xx）。
+协变量偏移（Covariate Shift）
+在机器学习中，协变量偏移是指训练数据和测试数据之间的输入特征（即协变量）的分布不同。尽管输出变量的条件分布 P(y∣x) 保持不变，但输入特征 x xx 的分布发生了变化，即 P ( x ) 发生了变化。这会导致模型在训练时学到的模式无法很好地泛化到新的数据上，从而影响模型的性能。&lt;/p&gt;
+&lt;p&gt;举例说明
+场景：我们构建一个模型来预测房价。
+协变量：影响房价的因素如房屋面积、房间数量、房屋位置、建成年份等就是协变量。它们是模型用来学习的输入特征，帮助预测房价。
+目标变量：房价是我们要预测的目标变量。
+协变量偏移：假设我们的房价预测模型是在城市A的数据上训练的，城市A的房屋面积主要集中在80-120平方米之间。当我们将这个模型用于城市B，发现城市B的房屋面积主要集中在50-90平方米之间。虽然模型的任务依然是预测房价，但城市B的房屋面积分布与城市A不同，这就导致了协变量偏移。&lt;/p&gt;
+&lt;p&gt;内部协变量偏移（Internal Covariate Shift） 是协变量偏移的一个扩展概念，但它不是指训练数据和测试数据之间的偏移，而是指在神经网络的训练过程中，不同网络层之间的输入分布发生变化。&lt;/p&gt;
+&lt;p&gt;在神经网络中，每一层的输入都是上一层的输出，随着训练过程中的权重不断更新，前面几层的参数发生变化后，它们的输出分布也会改变，这样就会导致后续层的输入分布也不断变化，后面的层需要不断适应前面层的变化分布，进而增加了训练难度。
+也就是输入变量的分布变化导致的问题。不过内部协变量偏移是说在网络的内部层之间发生的这种情况，而不是整个输入数据的分布变化。&lt;/p&gt;
+&lt;p&gt;为了解决这个问题，Batch Normalization被提出来，通过对每一层的输入进行标准化处理，使其均值0，方差1，从而减少内部协变量偏移的影响。&lt;/p&gt;
+&lt;h3 id=&#34;rmsnorm-layernorm&#34;&gt;RMSNORM LayerNorm
+&lt;/h3&gt;</description>
+        </item>
+        <item>
+        <title>OPtuna_learn1</title>
+        <link>https://aeon0418.github.io/hugo-dev/articles/2025/optuan/optuna_learn1/</link>
+        <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/articles/2025/optuan/optuna_learn1/</guid>
+        <description>&lt;p&gt;&lt;code&gt;**param&lt;/code&gt; 将 param 字典中的所有键值对解包并作为关键字参数传递给 XGBRegressor 构造函数。&lt;/p&gt;
+&lt;p&gt;用这个传递config&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;@multi_objective&lt;/code&gt; ​&lt;strong&gt;并非官方原生装饰器&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;自动将返回的多个值传递给多目标Study&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;trial&#34;&gt;trial
+&lt;/h1&gt;&lt;p&gt;是对一个目标函数进行评价的过程。&lt;/p&gt;
+&lt;p&gt;该对象传递给目标函数，并提供获取参数的接口
+建议、管理试用状态、设置/获取试用自定义属性。&lt;/p&gt;
+&lt;p&gt;注意，不建议直接使用这个构造函数。
+这个对象被无缝地实例化并传递给后面的目标函数
+function: ‘ optuna.study.Study.optimize() ’方法；因此图书馆用户并不关心
+该对象的实例化。&lt;/p&gt;
+&lt;p&gt;参数:
+study:
+ A :class:“~ optuna.study。研究的对象。
+trial_id:
+A trial ID是自动生成的试用ID。&lt;/p&gt;
+&lt;p&gt;”“”&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;参数建议&lt;/strong&gt;：Trial提供了多种方法来获取不同类型参数的建议值，如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;suggest_float() - 建议浮点数参数&lt;/li&gt;
+&lt;li&gt;suggest_int() - 建议整数参数&lt;/li&gt;
+&lt;li&gt;suggest_categorical() - 建议分类参数&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;状态管理&lt;/strong&gt;：可以报告中间值、判断是否应该提前终止等&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;report() - 报告某一步骤的中间结果值&lt;/li&gt;
+&lt;li&gt;should_prune() - 判断是否应该提前停止（剪枝）当前试验&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;属性管理&lt;/strong&gt;：可以设置和获取用户自定义属性&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;set_user_attr() - 设置用户自定义属性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;使用举例&#34;&gt;使用举例
+&lt;/h2&gt;&lt;p&gt;当你定义一个目标函数进行优化时，Optuna会将Trial对象传递给该函数：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;objective&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;trial&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# 获取参数建议&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;learning_rate&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;trial&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;suggest_float&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;learning_rate&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1e-5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mf&#34;&gt;1e-1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;log&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;kc&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;num_layers&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;trial&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;suggest_int&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;num_layers&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;5&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# 使用这些参数训练模型&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;model&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;MyModel&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;learning_rate&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;learning_rate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;num_layers&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;num_layers&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# 训练过程中可以报告中间结果&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;for&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epoch&lt;/span&gt; &lt;span class=&#34;ow&#34;&gt;in&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;range&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;100&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;score&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;train_one_epoch&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;model&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;n&#34;&gt;trial&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;report&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;score&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;epoch&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;c1&#34;&gt;# 判断是否应该提前停止&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;trial&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;should_prune&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;():&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;            &lt;span class=&#34;k&#34;&gt;raise&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;optuna&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;TrialPruned&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;c1&#34;&gt;# 返回最终评估分数&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;final_score&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;重要属性&#34;&gt;重要属性
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;params&lt;/strong&gt;：包含所有已建议参数的字典&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;distributions&lt;/strong&gt;：包含参数分布信息的字典&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;user_attrs&lt;/strong&gt;：用户自定义属性&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;datetime_start&lt;/strong&gt;：试验开始时间&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;number&lt;/strong&gt;：试验编号&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;实际工作机制&#34;&gt;实际工作机制
+&lt;/h2&gt;&lt;p&gt;当你执行study.optimize(objective, n_trials=100)时：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Optuna会创建一个新的Trial对象&lt;/li&gt;
+&lt;li&gt;将它传给你的objective函数&lt;/li&gt;
+&lt;li&gt;在函数内部，每次调用trial.suggest_*方法时，Optuna会:
+&lt;ul&gt;
+&lt;li&gt;记录参数名和分布&lt;/li&gt;
+&lt;li&gt;使用采样器(sampler)为该参数选择一个值&lt;/li&gt;
+&lt;li&gt;返回选择的值用于构建模型&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;当objective函数返回一个值时，Optuna会:
+&lt;ul&gt;
+&lt;li&gt;将这个值与参数组合关联起来&lt;/li&gt;
+&lt;li&gt;使用这个信息来指导后续Trial的参数选择&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这种&amp;quot;定义即运行&amp;quot;(Define-by-Run)的API设计使Optuna非常灵活，比传统的&amp;quot;先定义搜索空间再运行&amp;quot;框架更直观易用。&lt;/p&gt;
+&lt;h1 id=&#34;study&#34;&gt;Study
+&lt;/h1&gt;&lt;p&gt;一项研究对应于一项优化任务，即一组试验。&lt;/p&gt;
+&lt;p&gt;这个对象提供了运行一个新的：class:`~optuna.trial的接口。试验，准入试验
+历史记录，设置/获取研究本身的用户定义属性。&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;注意，不建议直接使用这个构造函数。&lt;/dt&gt;
+&lt;dt&gt;要创建和加载研究，请参考的文档&lt;/dt&gt;
+&lt;dd&gt;func:“~ optuna.study。Create_study ‘和：func: ’ ~optuna.study. &amp;rsquo;load_study的分别。&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;”“”&lt;/p&gt;
+&lt;h2 id=&#34;study类是什么&#34;&gt;Study类是什么
+&lt;/h2&gt;&lt;p&gt;Study（研究）是Optuna中最核心的概念之一，代表了一个完整的优化任务。简单来说，Study就是一组试验（trials）的集合，它负责管理整个超参数优化过程。&lt;/p&gt;
+&lt;h2 id=&#34;study类的主要功能&#34;&gt;Study类的主要功能
+&lt;/h2&gt;&lt;h3 id=&#34;1-创建和运行试验&#34;&gt;1. 创建和运行试验
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 使用optimize方法运行多次试验
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study.optimize(objective_function, n_trials=100)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 或者使用ask/tell接口手动控制试验
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;trial = study.ask()  # 创建新试验
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 使用trial进行模型训练...
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study.tell(trial, score)  # 报告结果
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;2-访问优化结果&#34;&gt;2. 访问优化结果
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 获取最佳参数
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;best_params = study.best_params
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 获取最佳分数
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;best_value = study.best_value
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 获取最佳试验对象
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;best_trial = study.best_trial
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 获取所有试验
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;all_trials = study.trials
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;3-多目标优化&#34;&gt;3. 多目标优化
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 创建多目标优化study
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study = optuna.create_study(directions=[&amp;#34;minimize&amp;#34;, &amp;#34;maximize&amp;#34;])
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 获取帕累托最优解集
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;pareto_trials = study.best_trials
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;4-存储和加载&#34;&gt;4. 存储和加载
+&lt;/h3&gt;&lt;p&gt;Study可以持久化到数据库中，便于实验结果保存和恢复。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 保存到SQLite数据库&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;study&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;optuna&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;create_study&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;storage&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;sqlite:///example.db&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 稍后加载相同的study&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;loaded_study&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;optuna&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load_study&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;study_name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;my_study&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;storage&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;sqlite:///example.db&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;5-自定义属性管理&#34;&gt;5. 自定义属性管理
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 设置用户自定义属性
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study.set_user_attr(&amp;#34;description&amp;#34;, &amp;#34;这是测试实验&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 获取所有用户属性
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;user_attrs = study.user_attrs
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;重要概念解析&#34;&gt;重要概念解析
+&lt;/h2&gt;&lt;h3 id=&#34;study和trial的关系&#34;&gt;Study和Trial的关系
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Study（研究）&lt;/strong&gt;：整个优化任务，管理多个trials&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Trial（试验）&lt;/strong&gt;：单次评估，使用一组特定的超参数值&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;优化方向&#34;&gt;优化方向
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 最小化（例如损失函数）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study = optuna.create_study(direction=&amp;#34;minimize&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 最大化（例如准确率）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study = optuna.create_study(direction=&amp;#34;maximize&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;sampler采样器&#34;&gt;Sampler（采样器）
+&lt;/h3&gt;&lt;p&gt;决定如何选择下一组超参数值进行尝试：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 使用TPE算法作为采样器
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study = optuna.create_study(sampler=optuna.samplers.TPESampler())
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;pruner剪枝器&#34;&gt;Pruner（剪枝器）
+&lt;/h3&gt;&lt;p&gt;决定何时提前停止无希望的试验：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 使用中位数剪枝器
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study = optuna.create_study(pruner=optuna.pruners.MedianPruner())
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;实际使用示例简化&#34;&gt;实际使用示例（简化）
+&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;import optuna
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 定义目标函数
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;def objective(trial):
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    x = trial.suggest_float(&amp;#34;x&amp;#34;, -10, 10)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    y = trial.suggest_float(&amp;#34;y&amp;#34;, -10, 10)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    return x**2 + y**2  # 优化目标是最小化这个值
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 创建study对象
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study = optuna.create_study(direction=&amp;#34;minimize&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 运行优化
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study.optimize(objective, n_trials=100)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 输出结果
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;print(f&amp;#34;最佳参数: {study.best_params}&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;print(f&amp;#34;最佳分数: {study.best_value}&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;关键点总结&#34;&gt;关键点总结
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Study是优化任务的整体容器，管理多个trial&lt;/li&gt;
+&lt;li&gt;每个trial代表一次使用特定参数组合的评估&lt;/li&gt;
+&lt;li&gt;Study可以保存到数据库中，方便实验的持久化和恢复&lt;/li&gt;
+&lt;li&gt;Optuna提供了丰富的功能来分析和可视化优化结果&lt;/li&gt;
+&lt;li&gt;可以通过ask/tell接口实现更灵活的试验控制&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;打印完成的trial数量&#34;&gt;打印完成的trial数量
+&lt;/h2&gt;&lt;p&gt;    print(&amp;ldquo;Number of finished trials: &amp;ldquo;, len(study.trials))&lt;/p&gt;
+&lt;h1 id=&#34;create_study函数详解&#34;&gt;Create_study 函数详解
+&lt;/h1&gt;&lt;p&gt;是 Optuna 中创建一个新的优化研究（Study）的函数。这个函数为你设置好所有必要的组件，让你可以开始进行超参数优化。&lt;/p&gt;
+&lt;h2 id=&#34;基本用法&#34;&gt;基本用法
+&lt;/h2&gt;&lt;p&gt;最简单的使用方式：&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;import optuna&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;study = optuna.create_study()&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;这会创建一个默认的 Study 对象，你可以用它来优化你的目标函数。&lt;/p&gt;
+&lt;h2 id=&#34;关键参数解释&#34;&gt;关键参数解释
+&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;storage&lt;/strong&gt;（存储）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;决定你的优化结果保存在哪里&lt;/li&gt;
+&lt;li&gt;默认值（None）：使用内存存储，关闭程序后结果会丢失&lt;/li&gt;
+&lt;li&gt;可以设置为数据库 URL：&amp;ldquo;sqlite:///example.db&amp;rdquo;，这样结果会被永久保存&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;sampler&lt;/strong&gt;（采样器）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;决定如何选择下一组超参数值进行尝试&lt;/li&gt;
+&lt;li&gt;默认值（None）：
+&lt;ul&gt;
+&lt;li&gt;单目标优化：使用 TPESampler（树形 Parzen 估计器）&lt;/li&gt;
+&lt;li&gt;多目标优化：使用 NSGAIISampler（非支配排序遗传算法 II）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;pruner&lt;/strong&gt;（剪枝器）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;决定何时提前停止无望的试验&lt;/li&gt;
+&lt;li&gt;默认值（None）：使用 MedianPruner（中位数剪枝器）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;study_name&lt;/strong&gt;（研究名称）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;给你的优化研究起一个名字&lt;/li&gt;
+&lt;li&gt;默认值（None）：自动生成一个唯一名称&lt;/li&gt;
+&lt;li&gt;如果你要保存研究并稍后恢复，设置一个有意义的名称会很有帮助&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;direction/directions&lt;/strong&gt;（优化方向）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;决定你是要最小化还是最大化目标函数&lt;/li&gt;
+&lt;li&gt;默认值：[&amp;ldquo;minimize&amp;rdquo;]（最小化）&lt;/li&gt;
+&lt;li&gt;选项：
+&lt;ul&gt;
+&lt;li&gt;&amp;ldquo;minimize&amp;rdquo;：最小化（例如误差、损失）&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;maximize&amp;rdquo;：最大化（例如准确率、R²值）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;directions 用于多目标优化（同时优化多个目标）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;load_if_exists&lt;/strong&gt;（如果存在则加载）&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;控制当尝试创建的 study_name 已存在时的行为&lt;/li&gt;
+&lt;li&gt;默认值：False（如果存在同名研究则报错）&lt;/li&gt;
+&lt;li&gt;设为 True：如果存在同名研究则加载现有研究而不是创建新的&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;简单示例解释&#34;&gt;简单示例解释
+&lt;/h2&gt;&lt;p&gt;代码：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;import optuna
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;def objective(trial):
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    x = trial.suggest_float(&amp;#34;x&amp;#34;, 0, 10)  # 在0到10之间建议一个浮点数
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    return x**2  # 目标是最小化 x 的平方
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 创建研究
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study = optuna.create_study()
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 运行优化，尝试3次
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study.optimize(objective, n_trials=3)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;这个例子中：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;我们创建了一个默认的 Study（内存存储，最小化目标）&lt;/li&gt;
+&lt;li&gt;我们定义了一个简单的目标函数，它接收一个 trial 参数并返回一个分数&lt;/li&gt;
+&lt;li&gt;我们调用 optimize 方法来运行优化，进行3次尝试&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;2-指定优化方向&#34;&gt;2. 指定优化方向
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 创建一个最小化目标的Study（例如损失函数）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study = optuna.create_study(direction=&amp;#34;minimize&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 创建一个最大化目标的Study（例如准确率）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study = optuna.create_study(direction=&amp;#34;maximize&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;3-持久化存储到数据库&#34;&gt;3. 持久化存储到数据库
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 将优化结果保存到SQLite数据库
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study = optuna.create_study(storage=&amp;#34;sqlite:///optuna_results.db&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 将优化结果保存到MySQL数据库
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study = optuna.create_study(storage=&amp;#34;mysql://user:password@localhost/optuna_db&amp;#34;)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;4-自定义采样器&#34;&gt;4. 自定义采样器
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;7
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 使用随机搜索采样器
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;from optuna.samplers import RandomSampler
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study = optuna.create_study(sampler=RandomSampler())
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 使用CMA-ES采样器（适合连续参数优化）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;from optuna.samplers import CmaEsSampler
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study = optuna.create_study(sampler=CmaEsSampler())
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;6-多目标优化&#34;&gt;6. 多目标优化
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;5
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 创建一个多目标优化研究（同时最小化和最大化两个目标）
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study = optuna.create_study(directions=[&amp;#34;minimize&amp;#34;, &amp;#34;maximize&amp;#34;])
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;# 三个目标的优化
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study = optuna.create_study(directions=[&amp;#34;minimize&amp;#34;, &amp;#34;maximize&amp;#34;, &amp;#34;minimize&amp;#34;])
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;7-命名研究并加载已有研究&#34;&gt;7. 命名研究并加载已有研究
+&lt;/h3&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 创建一个命名的研究&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;study&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;optuna&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;create_study&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;storage&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;sqlite:///optuna_results.db&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;study_name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;my_experiment&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# 如果存在同名研究则加载它，否则创建新的&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;study&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;optuna&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;create_study&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;storage&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;sqlite:///optuna_results.db&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;study_name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;my_experiment&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;load_if_exists&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;True&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h1 id=&#34;recipes&#34;&gt;recipes
+&lt;/h1&gt;&lt;h1 id=&#34;使用-rdb-后端保存恢复学习&#34;&gt;使用 RDB 后端保存/恢复学习
+&lt;/h1&gt;&lt;h2 id=&#34;继续学习&#34;&gt;继续学习&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/tutorial/20_recipes/001_rdb.html#resume-study&#34;  title=&#34;链接至此标题&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;要恢复研究，请实例化一个&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.Study.html#optuna.study.Study&#34;  title=&#34;optuna.study.研究&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;Study&lt;/code&gt;&lt;/a&gt;传递研究名称&lt;code&gt;example-study&lt;/code&gt;和数据库 URL 的对象&lt;code&gt;sqlite:///example-study.db&lt;/code&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;study&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;optuna&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;create_study&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;study_name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;study_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;storage&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;storage_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;load_if_exists&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;study&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;optimize&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;objective&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n_trials&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;请注意，存储不存储&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/samplers/index.html#module-optuna.samplers&#34;  title=&#34;optuna.采样器&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;samplers&lt;/code&gt;&lt;/a&gt; 和的实例的状态&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/pruners.html#module-optuna.pruners&#34;  title=&#34;optuna.pruners&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;pruners&lt;/code&gt;&lt;/a&gt;。当我们使用指定了可重复性的采样器恢复研究时&lt;code&gt;seed&lt;/code&gt;，您需要使用 恢复采样器，&lt;code&gt;pickle&lt;/code&gt;如下所示：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pickle&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;c1&#34;&gt;# Save the sampler with pickle to be loaded later.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;with&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;sampler.pkl&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;wb&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;as&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fout&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;:&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;pickle&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;dump&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;study&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;sampler&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;fout&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;restored_sampler&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;pickle&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;open&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;sampler.pkl&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;rb&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;))&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;study&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;optuna&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;create_study&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;study_name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;study_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;storage&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;storage_name&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;load_if_exists&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;True&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;sampler&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;restored_sampler&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;study&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;optimize&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;objective&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n_trials&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description>
+        </item>
+        <item>
+        <title>OPtuna_learn2</title>
+        <link>https://aeon0418.github.io/hugo-dev/articles/2025/optuna2/optuna_learn2/</link>
+        <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/articles/2025/optuna2/optuna_learn2/</guid>
+        <description>&lt;h1 id=&#34;optunastudy&#34;&gt;optuna.study
+&lt;/h1&gt;&lt;p&gt;该&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/study.html#module-optuna.study&#34;  title=&#34;optuna.研究&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;study&lt;/code&gt;&lt;/a&gt;模块实现了&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.Study.html#optuna.study.Study&#34;  title=&#34;optuna.study.研究&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;Study&lt;/code&gt;&lt;/a&gt;对象和相关函数。该类有一个公共构造函数&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.Study.html#optuna.study.Study&#34;  title=&#34;optuna.study.研究&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;Study&lt;/code&gt;&lt;/a&gt;，但不建议直接使用此构造函数。相反，库用户应该分别&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.Study.html#optuna.study.Study&#34;  title=&#34;optuna.study.研究&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;Study&lt;/code&gt;&lt;/a&gt;使用和来创建&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.create_study.html#optuna.study.create_study&#34;  title=&#34;optuna.study.create_study&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;create_study()&lt;/code&gt;&lt;/a&gt;和加载&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.load_study.html#optuna.study.load_study&#34;  title=&#34;optuna.study.load_study&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;load_study()&lt;/code&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;h2 id=&#34;optunastudystudy&#34;&gt;optuna.study.study
+&lt;/h2&gt;&lt;p&gt;&lt;code&gt;*class*optuna.study.Study(*study_name*, *storage*, *sampler=None*, *pruner=None*)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;请注意，不建议直接使用此构造函数。要创建和加载研究，请分别参考 &lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.create_study.html#optuna.study.create_study&#34;  title=&#34;optuna.study.create_study&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;create_study()&lt;/code&gt;&lt;/a&gt;和的文档&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.load_study.html#optuna.study.load_study&#34;  title=&#34;optuna.study.load_study&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;load_study()&lt;/code&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;方法&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.Study.html#optuna.study.Study.add_trial&#34;  title=&#34;optuna.study.Study.add_trial&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;add_trial&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.Study.html#optuna.study.Study.add_trials&#34;  title=&#34;optuna.study.Study.add_trials&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;add_trials&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.Study.html#optuna.study.Study.ask&#34;  title=&#34;optuna.study.Study.ask&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;ask&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;optimize&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&amp;hellip;&amp;hellip;&lt;/p&gt;
+&lt;p&gt;属性&lt;/p&gt;
+&lt;h1 id=&#34;optunatrial&#34;&gt;optuna.trial
+&lt;/h1&gt;&lt;p&gt;该&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/trial.html#module-optuna.trial&#34;  title=&#34;optuna.试用&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;trial&lt;/code&gt;&lt;/a&gt;模块包含&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.trial.Trial.html#optuna.trial.Trial&#34;  title=&#34;optuna.trial.试用&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;Trial&lt;/code&gt;&lt;/a&gt;相关的类和函数。&lt;/p&gt;
+&lt;p&gt;实例&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.trial.Trial.html#optuna.trial.Trial&#34;  title=&#34;optuna.trial.试用&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;Trial&lt;/code&gt;&lt;/a&gt;表示评估目标函数的过程。此实例传递给目标函数并提供接口来获取参数建议、管理试验状态以及设置/获取试验的用户定义属性，以便 Optuna 用户可以通过接口定义自定义目标函数。基本上，Optuna 用户只在其自定义目标函数中使用它。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;*class*  optuna.trial.Trial(*study*, *trial_id*)&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;optunacreate_study&#34;&gt;optuna.create_study
+&lt;/h1&gt;&lt;p&gt;创建一个新的&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.Study.html#optuna.study.Study&#34;  title=&#34;optuna.study.研究&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;Study&lt;/code&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;import optuna
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;def objective(trial):
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    x = trial.suggest_float(&amp;#34;x&amp;#34;, 0, 10)
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    return x**2
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study = optuna.create_study()
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;study.optimize(objective, n_trials=3)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;参数：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;storage&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;数据库 URL。如果此参数设置为 None， &lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.storages.InMemoryStorage.html#optuna.storages.InMemoryStorage&#34;  title=&#34;optuna.storages.InMemoryStorage&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;InMemoryStorage&lt;/code&gt;&lt;/a&gt;则使用，并且 &lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.Study.html#optuna.study.Study&#34;  title=&#34;optuna.study.研究&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;Study&lt;/code&gt;&lt;/a&gt;不会持久&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;sampler&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;实现背景算法以进行值建议的采样器对象。如果&lt;a class=&#34;link&#34; href=&#34;https://docs.python.org/3/library/constants.html#None&#34;  title=&#34;（在 Python v3.13 中）&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;None&lt;/code&gt;&lt;/a&gt;指定，&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/samplers/generated/optuna.samplers.TPESampler.html#optuna.samplers.TPESampler&#34;  title=&#34;optuna.samplers.TPESampler&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;TPESampler&lt;/code&gt;&lt;/a&gt;则在单目标优化和&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/samplers/generated/optuna.samplers.NSGAIISampler.html#optuna.samplers.NSGAIISampler&#34;  title=&#34;optuna.samplers.NSGAIISampler&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;NSGAIISampler&lt;/code&gt;&lt;/a&gt;多目标优化期间使用。另请参阅&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/samplers/index.html#module-optuna.samplers&#34;  title=&#34;optuna.采样器&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;samplers&lt;/code&gt;&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;pruner&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;决定提前停止无希望试验的修剪器对象。如果&lt;a class=&#34;link&#34; href=&#34;https://docs.python.org/3/library/constants.html#None&#34;  title=&#34;（在 Python v3.13 中）&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;None&lt;/code&gt;&lt;/a&gt; 指定，&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.pruners.MedianPruner.html#optuna.pruners.MedianPruner&#34;  title=&#34;optuna.pruners.MedianPruner&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;MedianPruner&lt;/code&gt;&lt;/a&gt;则用作默认值&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;study_name&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;direction&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;directions&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;多目标优化期间的方向序列。也可以传递相应的&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.StudyDirection.html#optuna.study.StudyDirection&#34;  title=&#34;optuna.study.学习方向&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;StudyDirection&lt;/code&gt;&lt;/a&gt; 对象。默认minimize&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;load_if_exists&lt;/strong&gt; ( &lt;a class=&#34;link&#34; href=&#34;https://docs.python.org/3/library/functions.html#bool&#34;  title=&#34;（在 Python v3.13 中）&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;em&gt;bool&lt;/em&gt;&lt;/a&gt; )&lt;/p&gt;
+&lt;p&gt;Returns:&lt;/p&gt;
+&lt;p&gt;A &lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.Study.html#optuna.study.Study&#34;  title=&#34;optuna.study.Study&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;Study&lt;/code&gt;&lt;/a&gt; object.&lt;/p&gt;
+&lt;p&gt;Return type:&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.Study.html#optuna.study.Study&#34;  title=&#34;optuna.study.Study&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Study&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.create_study.html#optuna.create_study&#34;  title=&#34;optuna.create_study&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;optuna.create_study()&lt;/code&gt;&lt;/a&gt; is an alias of &lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.create_study.html#optuna.study.create_study&#34;  title=&#34;optuna.study.create_study&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;optuna.study.create_study()&lt;/code&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h1 id=&#34;optunaload_study&#34;&gt;optuna.load_study
+&lt;/h1&gt;&lt;p&gt;&lt;code&gt;optuna.load_study(***, *study_name*, *storage*, *sampler=None*, *pruner=None*)&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Load the existing &lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.Study.html#optuna.study.Study&#34;  title=&#34;optuna.study.Study&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;Study&lt;/code&gt;&lt;/a&gt; that has the specified name.&lt;/p&gt;
+&lt;p&gt;Example&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-gdscript3&#34; data-lang=&#34;gdscript3&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;optuna&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;k&#34;&gt;def&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;objective&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;trial&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;):&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;trial&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;suggest_float&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;x&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;10&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;**&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;study&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;optuna&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;create_study&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;storage&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;sqlite:///example.db&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;study_name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;my_study&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;study&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;optimize&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;objective&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;n_trials&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;n&#34;&gt;loaded_study&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;optuna&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;load_study&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;study_name&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;my_study&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;storage&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s2&#34;&gt;&amp;#34;sqlite:///example.db&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nb&#34;&gt;assert&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;loaded_study&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;trials&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;len&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;study&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;trials&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;Parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;study_name&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt; 研究的名称。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;storage&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;数据库 URL&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;sampler&lt;/strong&gt; ( &lt;em&gt;&amp;lsquo;samplers.BaseSampler&amp;rsquo;&lt;/em&gt; &lt;em&gt;|&lt;/em&gt; &lt;em&gt;None&lt;/em&gt; ) – 实现背景算法以进行值建议的采样器对象。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;pruner&lt;/strong&gt; ( &lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.pruners.BasePruner.html#optuna.pruners.BasePruner&#34;  title=&#34;optuna.pruners.BasePruner&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;em&gt;pruners.BasePruner&lt;/em&gt;&lt;/a&gt; &lt;em&gt;|&lt;/em&gt; &lt;em&gt;None&lt;/em&gt; ) – 决定提前停止无希望试验的修剪器对象&lt;/p&gt;
+&lt;p&gt;Returns:&lt;/p&gt;
+&lt;p&gt;A &lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.Study.html#optuna.study.Study&#34;  title=&#34;optuna.study.Study&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;code&gt;Study&lt;/code&gt;&lt;/a&gt; object.&lt;/p&gt;
+&lt;p&gt;Return type:&lt;/p&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://optuna.readthedocs.io/en/stable/reference/generated/optuna.study.Study.html#optuna.study.Study&#34;  title=&#34;optuna.study.Study&#34;
+     target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Study&lt;/a&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://aeon0418.github.io/hugo-dev/articles/1/tranformer/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/articles/1/tranformer/</guid>
+        <description>&lt;h1 id=&#34;attention-is-all-you-need-transformer---model-explanation-including-math-inference-and-training&#34;&gt;Attention is all you need (Transformer) - Model explanation (including math), Inference and Training
+&lt;/h1&gt;&lt;h2 id=&#34;umar-jamil&#34;&gt;Umar Jamil
+&lt;/h2&gt;&lt;p&gt;previous：rnn，lstm&lt;/p&gt;
+&lt;p&gt;rnn无法映射：过长的上下文，前面的context的contribution几乎很小了&lt;/p&gt;
+&lt;p&gt;this is why transformer&lt;/p&gt;
+&lt;p&gt;齐宪标&lt;/p&gt;
+&lt;p&gt;输入&lt;/p&gt;
+&lt;p&gt;R256x10，每个词元256维，10个词，batchsize1&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/f87eca4d1bf0cb218b976b78ef3136aebb7c1b6d.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;loading-ag-666&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-01-23-16-37-55-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;ffn：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-01-23-16-46-21-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;# Attention、Transformer公式推导和矩阵变化&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-10-19-27-58-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;列向量x1到x800拼起来叫X&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-10-19-28-50-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;QKV,&lt;/p&gt;
+&lt;p&gt;计算A，计算A prime，Y&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-10-19-51-34-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;做内积 attention scroce&lt;/p&gt;
+&lt;p&gt;A就是as矩阵，包含所有as&lt;/p&gt;
+&lt;p&gt;再归一化&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-10-19-53-15-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-11-11-09-14-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;加上位置向量&lt;/p&gt;
+&lt;p&gt;tran&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-11-11-13-54-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-11-11-17-39-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://aeon0418.github.io/hugo-dev/articles/1/%E6%AF%9B%E7%8E%89%E4%BB%81/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/articles/1/%E6%AF%9B%E7%8E%89%E4%BB%81/</guid>
+        <description>&lt;p&gt;第一章&lt;/p&gt;
+&lt;p&gt;基于统计的语言模型 n-gram&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-01-22-14-45-11-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;基于学习的语言模型&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-01-22-14-28-00-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-01-22-14-51-56-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;PAC理论&lt;/p&gt;
+&lt;p&gt;假设空间 h已经一家独秀了，神经网络&lt;/p&gt;
+&lt;p&gt;rnn &amp;amp; transformer&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-01-22-16-07-43-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;评测标准&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-01-22-16-34-17-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-01-22-16-35-20-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-01-22-16-37-09-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-01-22-16-38-20-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;第二章&lt;/p&gt;
+&lt;p&gt;第三章&lt;/p&gt;
+&lt;p&gt;上下文学习&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-09-46-49-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;思维链COT&lt;/p&gt;
+&lt;p&gt;system1任务和system2的任务&lt;/p&gt;
+&lt;p&gt;思维链提示&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-09-52-18-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;嵌入中间推理步骤。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-09-54-02-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-09-59-01-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-10-00-59-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-10-01-22-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;训练的时候就cot了，会思考了&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-10-11-32-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;prompt工程技巧&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-10-22-10-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-10-22-36-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-10-26-29-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-10-35-33-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;第四章&lt;/p&gt;
+&lt;p&gt;参数高效微调&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-13-05-48-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-13-05-59-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-13-08-02-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;参数附加方法&#34;&gt;参数附加方法
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-13-11-40-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-13-12-02-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-13-12-22-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-13-14-35-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-13-14-18-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-13-17-44-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;C:%5cGithub%5cNotebook_MD%5cllm%5cassets%5c2025-02-08-13-20-29-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/a9c5ca6db2fe5fe3e7585bbd397c7d74618de3b6.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;lt;img src=&amp;#34;.\pic\1.png&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/6310d7bc4f9c6f51d0a1e3297703c2639a461ae6.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;file://C:%5cUsers%5cuser%5cDocuments%5cGitHub%5cNotebook_MD%5cassets%5ca9c5ca6db2fe5fe3e7585bbd397c7d74618de3b6.png?msec=1739091635178&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-09-17-05-16-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-09-17-09-07-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-09-17-09-42-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;后面的层更适合下游微调。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-09-17-10-28-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-09-17-10-49-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;早期使用的多，小模型。不是主流了&lt;/p&gt;
+&lt;h1 id=&#34;低秩微调方法&#34;&gt;低秩微调方法
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-09-17-13-57-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;数据或任务位于低维流形&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-09-17-15-19-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-10-10-43-20-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;插件化，可以独立保存。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-10-10-48-50-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-10-10-50-31-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-10-10-59-32-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;节省60%&lt;/p&gt;
+&lt;p&gt;4-4 应用&lt;/p&gt;
+&lt;p&gt;5模型编辑&lt;/p&gt;
+&lt;p&gt;6-0检索增强生成&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-10-11-33-04-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;先检索再生成，从知识库&lt;/p&gt;
+&lt;p&gt;6-1RAG架构分类&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://aeon0418.github.io/hugo-dev/articles/1/%E8%B0%A2%E6%B5%B7%E5%8D%8E/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/articles/1/%E8%B0%A2%E6%B5%B7%E5%8D%8E/</guid>
+        <description>&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-11-14-13-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;llm&#34;&gt;LLM
+&lt;/h2&gt;&lt;h2 id=&#34;基于统计的n-gram&#34;&gt;基于统计的n-gram
+&lt;/h2&gt;&lt;p&gt;一万亿个句子，统计相对频率。&lt;/p&gt;
+&lt;p&gt;word1出现在第一个位置的概率。计算联合概率。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-11-25-12-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;假设有一万亿个句子，计算pw1=出现“阳春三月”word1的概率&lt;/p&gt;
+&lt;p&gt;计算pw2|w1，计算在”阳春三月“这个词开头的句子里，出现“春意盎然”的概率&lt;/p&gt;
+&lt;p&gt;w0表示句首，中文是以字为单位。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-11-32-34-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-11-45-33-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;句子长度m，则有L tothepowerof m个参数，20词的句子，10的百次方&lt;/p&gt;
+&lt;p&gt;词汇表5000词，m=3，自由参数数目为1250亿。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-11-51-02-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-11-54-36-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-11-57-08-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-12-04-36-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-12-05-05-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-12-30-48-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-12-31-01-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;2.3.&lt;/p&gt;
+&lt;h2 id=&#34;rnn&#34;&gt;RNN
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-13-54-53-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-13-59-27-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-14-02-11-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-14-04-30-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;5.6.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-14-38-45-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-14-51-23-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;7.transformer&lt;/p&gt;
+&lt;p&gt;全称：sequence transduction model based entirely on attention&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-10-19-10-18-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-10-19-08-42-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-10-19-14-28-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-11-11-50-00-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-11-11-55-46-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;Q2&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-11-14-31-10-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;用8个wqkv矩阵来算QKV&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-11-14-38-53-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;位置编码，加上向量，&lt;/p&gt;
+&lt;p&gt;新颖方法Rope对词向量应用旋转。&lt;/p&gt;
+&lt;p&gt;trans中是相对位置编码&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-11-15-05-22-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;ol start=&#34;16&#34;&gt;
+&lt;li&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-01-18-14-57-42-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-12-33-35-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;对输出的概率分布的损失&lt;/p&gt;
+&lt;h4 id=&#34;9-intro-of-bert&#34;&gt;9-intro of bert
+&lt;/h4&gt;&lt;p&gt;bidirectional encoder representation from transformers&lt;/p&gt;
+&lt;p&gt;自编码&lt;/p&gt;
+&lt;p&gt;gpt自回归&lt;/p&gt;
+&lt;p&gt;llma&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-14-11-45-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;13-foundation of llms&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title></title>
+        <link>https://aeon0418.github.io/hugo-dev/articles/1/%E9%99%88%E4%BA%91%E9%9C%81aics%E7%A0%94%E8%AE%A8%E8%AF%BE/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/articles/1/%E9%99%88%E4%BA%91%E9%9C%81aics%E7%A0%94%E8%AE%A8%E8%AF%BE/</guid>
+        <description>&lt;p&gt;语言模型：联合分布&lt;/p&gt;
+&lt;p&gt;将联合概率建模为条件概率&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-14-29-39-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-14-30-39-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-14-34-17-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-14-36-06-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-14-37-31-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-14-40-49-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-15-07-53-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-15-09-36-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-15-46-53-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-15-48-48-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;BPE&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-15-52-29-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-15-53-58-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-15-59-10-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-16-02-04-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-16-03-49-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-16-06-11-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-16-09-56-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-16-12-43-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-16-19-27-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-13-16-21-15-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;二&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-11-57-26-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-11-58-16-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;所以要尽量使分布均匀&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-12-30-15-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-12-34-02-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-12-39-01-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-12-40-37-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;设计时：K和V来源一个模态，Q来源另一个模态。&lt;/p&gt;
+&lt;p&gt;残差也来源于Q&lt;/p&gt;
+&lt;h3 id=&#34;自&#34;&gt;自
+&lt;/h3&gt;&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-12-44-05-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-12-50-16-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-12-58-15-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-13-36-10-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-14-30-51-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-14-35-46-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-14-36-50-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h4 id=&#34;star&#34;&gt;star
+&lt;/h4&gt;&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-15-46-04-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-16-22-14-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;三&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-16-33-45-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-16-40-37-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-16-43-00-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-16-46-40-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-16-57-11-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;四reinforcement-l&#34;&gt;四REINFORCEMENT L
+&lt;/h1&gt;&lt;h1 id=&#34;五-推理-prompt&#34;&gt;五 推理 &amp;amp;prompt
+&lt;/h1&gt;&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/assets/2025-02-15-19-15-57-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h1 id=&#34;六-推理&#34;&gt;六 推理
+&lt;/h1&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

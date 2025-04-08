@@ -28,6 +28,19 @@
                 href="https://aeon0418.github.io/hugo-dev/en/"
                 />
   </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/en/article/</loc>
+    <lastmod>2025-04-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://aeon0418.github.io/hugo-dev/article/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aeon0418.github.io/hugo-dev/en/article/"
+                />
+  </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/en/categories/</loc>
     <lastmod>2025-04-07T00:00:00+00:00</lastmod>
     <xhtml:link
@@ -39,6 +52,19 @@
                 rel="alternate"
                 hreflang="en"
                 href="https://aeon0418.github.io/hugo-dev/en/categories/"
+                />
+  </url><url>
+    <loc>https://aeon0418.github.io/hugo-dev/en/articles/2025/articletemplate/test-chinese/</loc>
+    <lastmod>2025-04-07T00:00:00+00:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="zh-cn"
+                href="https://aeon0418.github.io/hugo-dev/articles/2025/articletemplate/article-template/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://aeon0418.github.io/hugo-dev/en/articles/2025/articletemplate/test-chinese/"
                 />
   </url><url>
     <loc>https://aeon0418.github.io/hugo-dev/en/p/test-chinese/</loc>

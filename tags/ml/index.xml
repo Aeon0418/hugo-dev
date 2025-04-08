@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>ML on 阳的博客</title>
+        <link>https://aeon0418.github.io/hugo-dev/tags/ml/</link>
+        <description>Recent content in ML on 阳的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>© AeonChen- 阳 陈</copyright>
+        <lastBuildDate>Mon, 07 Apr 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://aeon0418.github.io/hugo-dev/tags/ml/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>ICS内部协变量偏移</title>
+        <link>https://aeon0418.github.io/hugo-dev/articles/2025/ics/ics/</link>
+        <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/articles/2025/ics/ics/</guid>
+        <description>&lt;p&gt;:[Batch Normalization]: Accelerating Deep Network Training by Reducing Internal Covariate Shift&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;内部协变量偏移（Internal Covariate Shift）&lt;/strong&gt;  ICS&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/math_img/2025-02-15-12-01-19-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/math_img/2025-02-15-12-30-24-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h3 id=&#34;协变量covariate&#34;&gt;协变量（Covariate）
+&lt;/h3&gt;&lt;p&gt;在机器学习中，协变量是指用于预测或解释目标变量（y yy）的一组输入变量或特征（x xx）。
+协变量偏移（Covariate Shift）
+在机器学习中，协变量偏移是指训练数据和测试数据之间的输入特征（即协变量）的分布不同。尽管输出变量的条件分布 P(y∣x) 保持不变，但输入特征 x xx 的分布发生了变化，即 P ( x ) 发生了变化。这会导致模型在训练时学到的模式无法很好地泛化到新的数据上，从而影响模型的性能。&lt;/p&gt;
+&lt;p&gt;举例说明
+场景：我们构建一个模型来预测房价。
+协变量：影响房价的因素如房屋面积、房间数量、房屋位置、建成年份等就是协变量。它们是模型用来学习的输入特征，帮助预测房价。
+目标变量：房价是我们要预测的目标变量。
+协变量偏移：假设我们的房价预测模型是在城市A的数据上训练的，城市A的房屋面积主要集中在80-120平方米之间。当我们将这个模型用于城市B，发现城市B的房屋面积主要集中在50-90平方米之间。虽然模型的任务依然是预测房价，但城市B的房屋面积分布与城市A不同，这就导致了协变量偏移。&lt;/p&gt;
+&lt;p&gt;内部协变量偏移（Internal Covariate Shift） 是协变量偏移的一个扩展概念，但它不是指训练数据和测试数据之间的偏移，而是指在神经网络的训练过程中，不同网络层之间的输入分布发生变化。&lt;/p&gt;
+&lt;p&gt;在神经网络中，每一层的输入都是上一层的输出，随着训练过程中的权重不断更新，前面几层的参数发生变化后，它们的输出分布也会改变，这样就会导致后续层的输入分布也不断变化，后面的层需要不断适应前面层的变化分布，进而增加了训练难度。
+也就是输入变量的分布变化导致的问题。不过内部协变量偏移是说在网络的内部层之间发生的这种情况，而不是整个输入数据的分布变化。&lt;/p&gt;
+&lt;p&gt;为了解决这个问题，Batch Normalization被提出来，通过对每一层的输入进行标准化处理，使其均值0，方差1，从而减少内部协变量偏移的影响。&lt;/p&gt;
+&lt;h3 id=&#34;rmsnorm-layernorm&#34;&gt;RMSNORM LayerNorm
+&lt;/h3&gt;</description>
+        </item>
+        <item>
+        <title>python的命令</title>
+        <link>https://aeon0418.github.io/hugo-dev/notes/note/pythonc/</link>
+        <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/notes/note/pythonc/</guid>
+        <description>&lt;p&gt;快捷键&lt;/p&gt;
+&lt;p&gt;ctrl+k+c打注释&lt;/p&gt;
+&lt;p&gt;f-string在形式上是以 &lt;code&gt;f&lt;/code&gt; 或 &lt;code&gt;F&lt;/code&gt; 修饰符引领的字符串（&lt;code&gt;f&#39;xxx&#39;&lt;/code&gt; 或 &lt;code&gt;F&#39;xxx&#39;&lt;/code&gt;），以大括号 &lt;code&gt;{}&lt;/code&gt; 标明被替换的字段；f-string在本质上并不是字符串常量，而是一个在运行时运算求值的表达式&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;2
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;name = &amp;#39;Eric&amp;#39; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&amp;gt;&amp;gt;&amp;gt; f&amp;#39;Hello, my name is {name}&amp;#39;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;hr&gt;
+&lt;hr&gt;
+&lt;p&gt;os.walk() 方法用于通过在目录树中游走输出在目录中的文件名，向上或者向下。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;    for root, dirs, files in os.walk(file):
+    # root 表示当前正在访问的文件夹路径
+    # dirs 表示该文件夹下的子目录名list
+    # files 表示该文件夹下的文件list
+
+    # 遍历文件
+    for f in files:
+        print(os.path.join(root, f))
+
+    # 遍历所有的文件夹
+    for d in dirs:
+        print(os.path.join(root, d))
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+        </item>
+        <item>
+        <title>unslothtu</title>
+        <link>https://aeon0418.github.io/hugo-dev/articles/2025/unsloth_tutorial/unslothtu/</link>
+        <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/articles/2025/unsloth_tutorial/unslothtu/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>数学与机器学习</title>
+        <link>https://aeon0418.github.io/hugo-dev/articles/2025/mathforml/math4ml/</link>
+        <pubDate>Mon, 07 Apr 2025 00:00:00 +0000</pubDate>
+        
+        <guid>https://aeon0418.github.io/hugo-dev/articles/2025/mathforml/math4ml/</guid>
+        <description>&lt;h3 id=&#34;expressivity&#34;&gt;Expressivity:
+&lt;/h3&gt;&lt;p&gt;Which aspects of a neural network architecture affect the performance of deep
+learning?
+tool: Applied Harmonic Analysis, Approximation Theory, . . .
+Learning:
+Why does stochastic gradient descent converge to good local minima despite
+the non-convexity of the problem?
+tool: Algebraic/Differential Geometry, Optimal Control, Optimization, . . .
+Generalization:
+What is the role of depth?
+Why do large neural networks not overfit?
+tool: Learning Theory, Probability Theory, Statistics, . . .
+Explainability:
+Why did a trained deep neural network reach a certain decision?
+Which features of data are learned by deep architectures?
+tool: Information Theory, Uncertainty Quantification, . . .&lt;/p&gt;
+&lt;p&gt;Supervised learning is difficult (and interesting) for a variety of
+reasons:
+-The label y may not be deterministic: y = f(x) + ε, where ε
+is noise.
+-The prediction function f can be highly complex or nonlinear.
+-Only a few observations of x are available: requires
+interpolation and extrapolation, risking overfitting.
+-The input space X may be very large, leading to
+computational and statistical issues (curse of dimensionality).
+-Training and testing distributions may not align.
+-The performance criterion may not always be well-defined.&lt;/p&gt;
+&lt;p&gt;So&lt;/p&gt;
+&lt;p&gt;&lt;mark&gt;Remark&lt;/mark&gt;
+Most modern theoretical analyses of supervised learning rely on a
+probabilistic formulation; that is, we see (xi
+, yi) as a realization of
+random variables. The criterion is to maximize the expectation of
+some performance measure with respect to the distribution of the
+test data (in this course, maximizing the performance will be
+obtained by minimizing a loss function).&lt;/p&gt;
+&lt;h1 id=&#34;mathematical-theory-of-deep-learning&#34;&gt;Mathematical theory of deep learning
+&lt;/h1&gt;&lt;h2 id=&#34;philipp-petersen1-and-jakob-zech2&#34;&gt;Philipp Petersen1 and Jakob Zech2
+&lt;/h2&gt;&lt;p&gt;&lt;img src=&#34;https://aeon0418.github.io/hugo-dev/math_img/2025-03-08-16-02-43-image.png&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;p&gt;其数学公式如下：&lt;/p&gt;
+$$
+R 
+d
+ ∋x↦Φ(x)=T 
+1
+​
+ ∘σ∘T 
+0
+​
+ (x)
+$$&lt;h4 id=&#34;符号解释&#34;&gt;&lt;strong&gt;符号解释&lt;/strong&gt;
+&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;T0​,T1​ 是 &lt;strong&gt;仿射变换（affine transformations）&lt;/strong&gt;，即：&lt;/li&gt;
+&lt;/ul&gt;
+$$
+T(x)=Wx+b
+$$&lt;ul&gt;
+&lt;li&gt;其中：
+&lt;ul&gt;
+&lt;li&gt;W∈$Rq×p$ 是权重矩阵。&lt;/li&gt;
+&lt;li&gt;b∈$Rq $是偏置向量。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;σ 是 &lt;strong&gt;激活函数（activation function）&lt;/strong&gt;，作用于每个分量（元素）。&lt;/li&gt;
+&lt;li&gt;∘ 代表函数复合（composition），即按从右到左的顺序计算：
+&lt;ol&gt;
+&lt;li&gt;先进行仿射变换 $T0​(x)$。&lt;/li&gt;
+&lt;li&gt;然后对其结果施加激活函数 σ。&lt;/li&gt;
+&lt;li&gt;最后，再进行另一个仿射变换 $T1$​ 以得到最终输出 $Φ(x)$。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;直观理解&lt;/strong&gt;：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;第一层（隐藏层）&lt;/strong&gt; 由仿射变换 $T0​(x)=W0​x+b0$​ 处理输入，并通过激活函数 σ(T0​(x)) 进行非线性映射。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;第二层（输出层）&lt;/strong&gt; 采用另一个仿射变换 T1​ 处理隐藏层输出，得到最终结果 Φ(x)。&lt;/li&gt;
+&lt;li&gt;由于仅包含一层激活后的隐藏层，该神经网络被称为 &lt;strong&gt;“浅层”&lt;/strong&gt; 网络。&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
